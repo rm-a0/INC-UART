@@ -1,13 +1,9 @@
 # INC - Project
 
----
-
 ### Author Information
 **Name:** Michal Repčík  
 **Login:** xrepcim00  
 **Date:** _22.4.2024_
-
----
 
 ## Table of Contents
 
@@ -19,8 +15,6 @@
         - [Legend](#legend)
         - [Notes](#notes)
     - [Function Description](#fsm-function-description)
-
----
 
 ## Circuit Architecture (at RTL level)
 
@@ -36,8 +30,6 @@ The FSM is a state machine used to control the individual components of the circ
 - If BIT_CNT reaches the value of 8, it is reset.
 - **CMP_01** and **CMP_02** compare the counter outputs with given values and reset/increment the counters accordingly.
 - **MUX** is a multiplexer that receives data from DIN and uses SEL to distribute the data to designated outputs, which then place the data into registers.
-
----
 
 ## Finite State Machine Design
 
@@ -63,11 +55,3 @@ Undefined Moore outputs in the diagram are identical to the outputs listed in th
 - **Read_bit State:** The FSM waits until BIT_CNT reaches the value of 8, then transitions to the Stop_bit state.
 - **Stop_bit State:** The FSM waits for 16 clock cycles and then transitions to the Validate state.
 - **Validate State:** This state is used to transition back to the Idle state and validate the processed data.
-
----
-
-## Simulation Screenshot
-
-![Simulation Screenshot](fig/sim.jpg)
-
----
